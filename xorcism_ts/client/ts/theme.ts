@@ -11,13 +11,14 @@
  */
 
 const STORAGE_KEY = "xorcism.theme";
-const DEFAULT = "indigo";
+const DEFAULT = "njoy";
 
 export interface ThemeDef { code: string; label: string }
 
 // Deliberately explicit labels (no translation: palette names).
 export const THEMES: ThemeDef[] = [
-  { code: "indigo", label: "Indigo (défaut)" },
+  { code: "njoy", label: "NJOY Security (default)" },
+  { code: "indigo", label: "Indigo" },
   { code: "violet", label: "Violet" },
   { code: "emerald", label: "Emerald" },
   { code: "cyan", label: "Cyan" },

@@ -1,4 +1,4 @@
-# XORCISM — Plateforme unifiée open source de gestion de la cybersécurité
+# Information Peacekeeper — Plateforme unifiée open source de gestion de la cybersécurité
 
 > **Exposition au cyber-risque global.** Une plateforme auto-hébergée pour gérer
 > les actifs, la configuration, les vulnérabilités, les menaces, la conformité et
@@ -57,7 +57,7 @@ vos données ne quittent jamais votre infrastructure.
 | **Red / Purple team** | Playbooks d'attaque chaînés (OSINT→exploit, Metasploit), analyse des chemins d'attaque et points de passage, couverture de détection purple-team, **émulation d'adversaire BAS/AEV** (bibliothèque de tests atomiques curated, sûre par conception — 61 tests / 58 techniques MITRE ATT&CK — exécutée par l'agent de poste), programmes de bug bounty |
 | **SOC / Blue team** | Gestion des alertes et incidents, ticketing, de la détection à la réponse |
 
-### Pourquoi XORCISM
+### Pourquoi Information Peacekeeper
 
 - **Un seul modèle de risque.** Actifs, vulnérabilités et valeur se combinent en
   un `RiskScore` par actif et un `EnterpriseRiskScore` par locataire, recalculés
