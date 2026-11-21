@@ -21,8 +21,8 @@
  *   • Hardened (ASSETOVALDEFINITION.Status ∈ {Applied,Patched,Hardened,Compliant}) ...... −10
  *   • per valid ASSETTHREAT (ValidFrom/ValidUntil window) ........... + Criticity × 5
  *   • per "Unresolved/Open" and valid ASSETAUDITFINDING ............ + Criticity × 5
- *   • per open INCIDENTFORASSET (Status ∉ {Closed, Resolved}, XINCIDENT database):
- *         + Criticity × 3 ; +20 if Compromised = 1
+ *   • per linked open INCIDENT (status ∉ {Closed, Resolved}, XINCIDENT database):
+ *         + severity × 3 ; +20 if security_compromise is true
  *   • if ASSET.PersonID > 0: per "Completed" and valid TRAININGFORPERSON .. −5
  *
  * Validity window: a NULL/empty bound is treated as "unbounded"
@@ -225,16 +225,23 @@ export class AssetRiskScoreCalculator {
       .all(assetId, d, d) as { Criticity: unknown }[];
     for (const f of findings) c.findings += num(f.Criticity) * 5;
 
-    // — Open incidents (XINCIDENT database) — + Criticity × 3 ; +20 if compromised —
+    // — Open incidents (XINCIDENT database) — + severity × 3 ; +20 if compromised.
+    // INCIDENTFORASSET is the link table; severity/status belong to INCIDENT. —
     const incidents = getDb("XINCIDENT")
       .prepare(
-        'SELECT Criticity, Compromised FROM "INCIDENTFORASSET" WHERE AssetID = ? ' +
-          "AND LOWER(COALESCE(Status, '')) NOT IN ('closed', 'resolved')"
+        'SELECT i.Severity, i.security_compromise AS Compromised ' +
+          'FROM "INCIDENTFORASSET" fa JOIN "INCIDENT" i ON i.IncidentID = fa.IncidentID ' +
+          'LEFT JOIN "INCIDENTSTATUS" s ON s.IncidentStatusID = i.IncidentStatusID ' +
+          "WHERE fa.AssetID = ? AND LOWER(COALESCE(NULLIF(TRIM(i.status), ''), s.IncidentStatusName, '')) " +
+          "NOT IN ('closed', 'resolved')"
       )
-      .all(assetId) as { Criticity: unknown; Compromised: unknown }[];
+      .all(assetId) as { Severity: unknown; Compromised: unknown }[];
     for (const inc of incidents) {
-      c.incidents += num(inc.Criticity) * 3;
-      if (num(inc.Compromised) === 1) c.incidents += 20; // compromised asset
+      const severity = String(inc.Severity ?? "").trim().toLowerCase();
+      const levels: Record<string, number> = { low: 1, medium: 2, moderate: 2, high: 3, critical: 5 };
+      const level = num(inc.Severity) || levels[severity] || 0;
+      c.incidents += level * 3;
+      if (/^(1|true|yes|compromised)$/i.test(String(inc.Compromised ?? ""))) c.incidents += 20;
     }
 
     // — "Completed" and valid trainings of the responsible person (reduce) —

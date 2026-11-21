@@ -58,8 +58,8 @@ RUN mkdir -p /data && chown -R node:node /data /app
 USER node
 
 EXPOSE 9292
-# Healthcheck: the login page answers (any non-5xx => healthy)
+# Healthcheck: the login page answers normally to a browser-like client.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
-  CMD node -e "require('http').get('http://127.0.0.1:'+(process.env.PORT||9292)+'/login',r=>process.exit(r.statusCode<500?0:1)).on('error',()=>process.exit(1))"
+  CMD node -e "require('http').get({hostname:'127.0.0.1',port:process.env.PORT||9292,path:'/login',headers:{'User-Agent':'Mozilla/5.0 InformationPeacekeeperHealth/1.0'}},r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"
 
 CMD ["node", "dist/server/index.js"]
