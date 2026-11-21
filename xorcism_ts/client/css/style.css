@@ -6,24 +6,25 @@
    consistency with the modal windows (styled in dark). data-theme set
    on <html> by theme.ts (and by an inline script in <head> to avoid the flash). */
 :root{
-  --bg:#0f1117;            /* deep background (page, fields) */
-  --surface:#1a1d2e;       /* surfaces (topbar, toolbar, cards, headers) */
-  --surface-2:#13162a;     /* recessed surfaces (sidebar, modals) */
-  --surface-3:#1e2240;     /* active element (sidebar) */
-  --surface-4:#252840;     /* raised surface (audit items, BIA focus) */
-  --row-hover:#1a1f35;     /* table row hover */
-  --border:#2d3250;        /* borders */
-  --border-subtle:#1e2133; /* subtle borders (table lines) */
+  --bg:#061014;            /* NJOY Security near-black canvas */
+  --surface:#0b1b20;
+  --surface-2:#09161a;
+  --surface-3:#10343a;
+  --surface-4:#153037;
+  --row-hover:#10272c;
+  --border:#244147;
+  --border-subtle:#173137;
   --text:#e2e8f0;          /* main text */
   --text-soft:#cbd5e1;     /* cell text */
   --text-muted:#94a3b8;    /* secondary text */
   --text-dim:#64748b;      /* dimmed text (placeholders) */
   --text-faint:#475569;    /* section headers */
-  --accent:#7c83fd;        /* accent color */
+  --accent:#00decf;        /* NJOY Security teal */
   --success:#4ade80;       /* success */
   --danger:#f87171;        /* danger */
 }
 /* Accent variants (dark background kept) */
+html[data-theme="indigo"]{--bg:#0f1117;--surface:#1a1d2e;--surface-2:#13162a;--surface-3:#1e2240;--surface-4:#252840;--row-hover:#1a1f35;--border:#2d3250;--border-subtle:#1e2133;--accent:#7c83fd}
 html[data-theme="violet"]{--accent:#a78bfa}
 html[data-theme="emerald"]{--accent:#34d399}
 html[data-theme="cyan"]{--accent:#22d3ee}
@@ -38,7 +39,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 
 /* Topbar */
 .topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;gap:14px}
-.topbar .logo{font-size:17px;color:var(--accent);font-weight:700;letter-spacing:1px}
+.topbar .logo{display:inline-flex;align-items:center;gap:10px;flex-shrink:0;color:var(--text);font-size:15px;font-weight:750;letter-spacing:.02em;white-space:nowrap}
+.topbar .logo img{display:block;width:58px;height:34px;object-fit:contain}
+.topbar .logo .product-name{color:var(--text)}
+.topbar .logo:focus-visible,.topbar a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .topbar a{font-size:13px;color:var(--text-muted);text-decoration:none}
 .topbar a:hover{color:var(--text)}
 .topbar .spacer{flex:1}
@@ -67,7 +71,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .btn{display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;transition:opacity .15s;white-space:nowrap}
 .btn:hover{opacity:.85}
 .btn:disabled{opacity:.4;cursor:default}
-.btn-primary{background:var(--accent);color:#fff}
+.btn-primary{background:var(--accent);color:#052126}
+.btn-primary:hover{background:#39e8db;opacity:1}
 .btn-success{background:var(--success);color:#000}
 .btn-danger{background:var(--danger);color:#000}
 .btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text)}

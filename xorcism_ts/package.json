@@ -1,7 +1,7 @@
 {
-  "name": "xorcism-ts",
+  "name": "information-peacekeeper",
   "version": "1.6.0-beta.1",
-  "description": "XORCISM Database Explorer - TypeScript/Node.js",
+  "description": "Information Peacekeeper — self-hosted cyber exposure management",
   "main": "dist/server/index.js",
   "engines": {
     "node": ">=20 <23"

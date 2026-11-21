@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title data-i18n="cte.pageTitle">XORCISM — CTI-Expert (AI OSINT Investigation)</title><link rel="stylesheet" href="/css/style.css">
+<title data-i18n="cte.pageTitle">XORCISM — CTI-Expert (AI OSINT Investigation)</title><link rel="icon" href="/assets/njoy-logo-teal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css">
 <style>
   .mw{max-width:1340px;margin:0 auto;padding:18px}.mw h1{font-size:20px;margin:0 0 2px}
   .sub{color:#94a3b8;font-size:13px;margin-bottom:16px;max-width:1060px}
@@ -34,7 +35,7 @@
   .ai-badge{font-size:10px;font-weight:700;border-radius:5px;padding:1px 7px;background:#3b2f63;color:#ddd6fe}
   .lic{font-size:11px;color:#64748b;margin-top:20px;border-top:1px solid #1e2133;padding-top:10px}
 </style></head><body>
-<div class="topbar"><span class="logo">&#9670; XORCISM</span><a href="/" data-i18n="nav.explorer">&#8592; Explorer</a><a href="/osint-graph" data-i18n="cte.navOsint">&#128376;&#65039; OSINT Graph</a><a href="/ask" data-i18n="cte.navAsk">&#129302; Ask the model</a><a href="/stix-graph" data-i18n="cte.navStix">&#128376; STIX</a><span class="spacer"></span><span class="title" data-i18n="cte.navTitle">&#129523; CTI-Expert · AI OSINT Investigation</span></div>
+<div class="topbar"><span class="logo"><img src="/assets/njoy-logo-teal.svg" alt="NJOY SECURITY"><span class="product-name">Information Peacekeeper</span></span><a href="/" data-i18n="nav.explorer">&#8592; Explorer</a><a href="/osint-graph" data-i18n="cte.navOsint">&#128376;&#65039; OSINT Graph</a><a href="/ask" data-i18n="cte.navAsk">&#129302; Ask the model</a><a href="/stix-graph" data-i18n="cte.navStix">&#128376; STIX</a><span class="spacer"></span><span class="title" data-i18n="cte.navTitle">&#129523; CTI-Expert · AI OSINT Investigation</span></div>
 <div class="mw">
   <h1 data-i18n="cte.title">CTI-Expert — AI-orchestrated OSINT investigation</h1>
   <div class="sub" data-i18n="cte.sub">A port of the cti-expert analyst skill to XORCISM's local AI (Ollama). Give a target (domain, email, username, IP, person, org, phone, crypto wallet); the local LLM runs the CTI methodology — Acquire → Enrich → Assess → Deliver — over the matching XORCISM OSINT connectors, grades each finding's source reliability (A–F), scores exposure 0–100, and writes STIX 2.1 observables + an INTSUM into your threat-intel exchange. Private by design — nothing leaves your infrastructure.</div>

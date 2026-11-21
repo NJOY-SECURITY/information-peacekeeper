@@ -3,37 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>XORCISM Database Explorer</title>
+<title>Information Peacekeeper Database Explorer</title>
 <!-- Theme: applies the stored choice BEFORE rendering (avoids the flash). -->
 <script>try{var _t=localStorage.getItem('xorcism.theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
+<link rel="icon" href="/assets/njoy-logo-teal.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/css/style.css">
 <style>
   .landing{max-width:1180px;margin:0 auto;padding:48px 24px 64px}
   .landing-hero{text-align:center;margin-bottom:30px}
   .landing-hero h1{font-size:36px;margin:0 0 8px;font-weight:800;letter-spacing:.5px;
-    background:linear-gradient(135deg,#7c83fd,#a78bfa 60%,#22d3ee);-webkit-background-clip:text;
+    background:linear-gradient(135deg,#ffffff,#00decf 70%);-webkit-background-clip:text;
     background-clip:text;-webkit-text-fill-color:transparent}
   .landing-hero p{color:#94a3b8;font-size:15px;margin:0 auto;max-width:760px;line-height:1.5}
   .landing-hero .eyebrow{display:inline-block;margin-bottom:12px;font-size:11px;font-weight:700;letter-spacing:2px;
-    text-transform:uppercase;color:#22d3ee;padding:4px 12px;border:1px solid #1e3a44;border-radius:20px;
-    background:color-mix(in srgb,#22d3ee 10%,#0f1117)}
+    text-transform:uppercase;color:var(--accent);padding:4px 12px;border:1px solid var(--border);border-radius:20px;
+    background:color-mix(in srgb,var(--accent) 10%,var(--bg))}
   /* approach bands */
   .approach{margin:0 0 30px}
   .approach:last-of-type{margin-bottom:0}
   .approach-head{display:flex;align-items:center;gap:14px;margin:0 0 16px;padding:0 2px 11px;
-    border-bottom:1px solid #242a45}
+    border-bottom:1px solid var(--border)}
   .approach-num{flex:0 0 auto;font-family:ui-monospace,monospace;font-size:13px;font-weight:700;color:var(--accent);
     width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;
     background:color-mix(in srgb,var(--accent) 16%,#0f1117);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
   .approach-titles{display:flex;flex-direction:column;gap:2px;min-width:0}
-  .approach-title{font-size:17px;font-weight:800;letter-spacing:.3px;color:#e7ebf3}
+  .approach-title{font-size:17px;font-weight:800;letter-spacing:.3px;color:var(--text)}
   .approach-sub{font-size:12.5px;color:#94a3b8;line-height:1.35}
   .approach-count{margin-left:auto;flex:0 0 auto;font-size:11px;font-weight:700;color:var(--accent);white-space:nowrap;
     padding:3px 10px;border-radius:20px;background:color-mix(in srgb,var(--accent) 14%,#0f1117);
     border:1px solid color-mix(in srgb,var(--accent) 32%,transparent)}
   .domain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:18px}
   .domain-card{display:flex;flex-direction:column;align-items:flex-start;gap:12px;
-    background:#1a1d2e;border:1px solid #2d3250;border-radius:16px;padding:24px 22px;
+    background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 22px;
     text-decoration:none;color:#e2e8f0;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
   .domain-card:hover{transform:translateY(-4px);border-color:var(--accent);
     box-shadow:0 12px 34px rgba(0,0,0,.4)}
@@ -64,7 +65,7 @@
 <body>
 
 <div class="topbar">
-  <a href="/" class="logo" style="text-decoration:none;color:inherit">&#9670; XORCISM</a>
+  <a href="/" class="logo" style="text-decoration:none;color:inherit"><img src="/assets/njoy-logo-teal.svg" alt="NJOY SECURITY"><span class="product-name">Information Peacekeeper</span></a>
   <select id="jump-select" aria-label="Jump to a page" title="Jump directly to any page"
     style="margin-left:14px;background:#13162a;border:1px solid #2d3250;border-radius:7px;color:#cbd5e1;font-size:13px;padding:5px 9px;max-width:240px;cursor:pointer">
     <option value="">&#8618; Go to&#8230;</option>
@@ -103,8 +104,8 @@
 <div id="landing" class="landing">
   <div class="landing-hero">
     <span class="eyebrow" data-i18n="landing.eyebrow">Cyber Risk Operations Center (CROC)</span>
-    <h1>XORCISM</h1>
-    <p data-i18n="landing.sub">Le Cyber Risk Operations Center (CROC) qui réunit actifs, vulnérabilités, menace, risque et conformité en une seule plateforme. Choisissez votre <b>approche</b>.</p>
+    <h1>Information Peacekeeper</h1>
+    <p data-i18n="landing.sub">Unified cyber exposure management. One continuously updated risk score.</p>
   </div>
   <div class="landing-tools">
     <label class="nice-filter" title="Filter modules by NICE workforce profile">&#128100;

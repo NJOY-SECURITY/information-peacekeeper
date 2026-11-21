@@ -1,8 +1,10 @@
-# XORCISM — Open Unified Cybersecurity Management Platform
+# Information Peacekeeper
 
-> **Global Cyber Risk Exposure.** One self-hosted platform to manage assets,
-> configuration, vulnerabilities, threats, compliance and incidents — and turn
-> them into a single, continuously-recomputed enterprise risk score.
+> Unified cyber exposure management. One continuously updated risk score.
+
+Information Peacekeeper is a self-hosted cybersecurity platform that brings assets, configurations, vulnerabilities, threats, compliance and incidents together to continuously measure enterprise cyber risk.
+
+A product of [NJOY SECURITY](https://www.njoysecurity.com.au/), an Australian owned cybersecurity consultancy.
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-20_LTS-339933?logo=node.js&logoColor=white)
@@ -19,7 +21,7 @@
 
 **🇬🇧 English · [🇫🇷 Français](README.fr.md)**
 
-**🌐 [xorcism.ai](https://xorcism.ai) · 📖 [Installation](SETUP.MD) · 🧩 [Requirements](REQUIREMENTS.MD) · ▶ [YouTube channel](https://www.youtube.com/channel/UCk6OWxMBg1H4gHTZdpZGAhA)**
+**🌐 [NJOY SECURITY](https://www.njoysecurity.com.au/) · 📖 [Installation](SETUP.MD) · 🧩 [Requirements](REQUIREMENTS.MD)**
 
 ---
 
@@ -28,7 +30,7 @@
 Security teams juggle a dozen disconnected tools — a CMDB here, a vulnerability
 scanner there, a GRC spreadsheet, a CTI feed, a ticketing system, a risk
 register — and spend most of their time reconciling them instead of reducing
-risk. XORCISM unifies the whole **cyber-exposure lifecycle** behind one
+risk. Information Peacekeeper unifies the whole **cyber-exposure lifecycle** behind one
 schema-driven application and one identity model, so every asset, CVE, control,
 threat actor and incident lives in the same place and feeds the same risk score.
 
@@ -44,7 +46,7 @@ and connectors. No SaaS, no telemetry, your data never leaves your infrastructur
 
 ### Who it is for
 
-| Profile | How they use XORCISM |
+| Profile | How they use Information Peacekeeper |
 |---|---|
 | **CISO / RSSI** | Enterprise risk score, executive dashboard, compliance posture, EBIOS RM studies |
 | **VOC / Vulnerability analyst** | Asset inventory, CVE/KEV/EPSS triage, connector-driven scan ingestion |
@@ -53,7 +55,7 @@ and connectors. No SaaS, no telemetry, your data never leaves your infrastructur
 | **Red / Purple team** | Tool-chaining attack playbooks (OSINT→exploit, Metasploit), attack-path & choke-point analysis, purple-team detection coverage, **BAS/AEV** adversary emulation (a curated, safe-by-design atomic-test library — 61 tests / 58 MITRE ATT&CK techniques — run by the endpoint agent), bug-bounty programs |
 | **SOC / Blue team** | Alert & incident management, ticketing, detection-to-response |
 
-### Why XORCISM
+### Why Information Peacekeeper
 
 - **One risk model.** Assets, vulnerabilities and value combine into a per-asset
   `RiskScore` and a per-tenant `EnterpriseRiskScore`, recomputed every 30 s.

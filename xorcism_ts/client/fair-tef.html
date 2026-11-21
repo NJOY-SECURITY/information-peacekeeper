@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title data-i18n="ftef.pageTitle">XORCISM — FAIR Threat Event Frequency</title><link rel="stylesheet" href="/css/style.css">
+<title data-i18n="ftef.pageTitle">XORCISM — FAIR Threat Event Frequency</title><link rel="icon" href="/assets/njoy-logo-teal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css">
 <style>
   .mw{max-width:1240px;margin:0 auto;padding:18px}.mw h1{font-size:20px;margin:0 0 2px}
   .sub{color:#94a3b8;font-size:13px;margin-bottom:16px;max-width:1000px}
@@ -28,7 +29,7 @@
   .tree{font-size:12px;color:#94a3b8;line-height:1.7;background:#0f1117;border-radius:8px;padding:10px 12px;margin-bottom:10px;font-family:ui-monospace,monospace}
   .tree b{color:#e2e8f0}
 </style></head><body>
-<div class="topbar"><span class="logo">&#9670; XORCISM</span><a href="/" data-i18n="nav.explorer">&#8592; Explorer</a><a href="/fair-mam" data-i18n="ftef.navFairmam">&#128202; FAIR-MAM</a><a href="/risk-register" data-i18n="ftef.navRisk">&#128196; Risk register</a><a href="/ransomware" data-i18n="ftef.navRansomware">&#128274; Ransomware $</a><span class="spacer"></span><span class="title" data-i18n="ftef.navTitle">&#127922; FAIR — Threat Event Frequency</span></div>
+<div class="topbar"><span class="logo"><img src="/assets/njoy-logo-teal.svg" alt="NJOY SECURITY"><span class="product-name">Information Peacekeeper</span></span><a href="/" data-i18n="nav.explorer">&#8592; Explorer</a><a href="/fair-mam" data-i18n="ftef.navFairmam">&#128202; FAIR-MAM</a><a href="/risk-register" data-i18n="ftef.navRisk">&#128196; Risk register</a><a href="/ransomware" data-i18n="ftef.navRansomware">&#128274; Ransomware $</a><span class="spacer"></span><span class="title" data-i18n="ftef.navTitle">&#127922; FAIR — Threat Event Frequency</span></div>
 <div class="mw">
   <h1 data-i18n="ftef.title">FAIR — Threat &amp; Loss Event Frequency estimation</h1>
   <div class="sub" data-i18n="ftef.sub">The frequency side of the FAIR ontology (complementing FAIR-MAM's loss magnitude). Estimate each factor as a PERT range (min / most-likely / max) and run a Monte Carlo simulation: LEF = TEF × Vulnerability, TEF = Contact Frequency × Probability of Action, Vulnerability = P(Threat Capability > Resistance Strength). Add a loss magnitude → Annualized Loss Expectancy (ALE) + a loss-exceedance curve. Save to write LEF/ALE back onto a risk-register entry.</div>

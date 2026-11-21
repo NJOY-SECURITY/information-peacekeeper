@@ -338,6 +338,7 @@ app.use("/js", (req: Request, res: Response, next: NextFunction) => {
 });
 app.use("/js", express.static(path.join(__dirname, "../../dist/client/js")));
 app.use("/css", express.static(path.join(__dirname, "../../client/css")));
+app.use("/assets", express.static(path.join(__dirname, "../../client/assets")));
 app.use(
   "/vendor/xlsx.full.min.js",
   express.static(path.join(__dirname, "../../node_modules/xlsx/dist/xlsx.full.min.js"))
