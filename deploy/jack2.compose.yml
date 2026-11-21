@@ -1,0 +1,9 @@
+# Jack-2: keep HTTP on loopback and publish HTTPS through Tailscale Serve.
+services:
+  xorcism:
+    image: njoy/information-peacekeeper:jack2-20261121
+    container_name: information-peacekeeper
+    ports: !override
+      - "127.0.0.1:9292:9292"
+    environment:
+      XORCISM_ALLOW_REGISTER: "0"
